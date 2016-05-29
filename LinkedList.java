@@ -134,8 +134,8 @@ public class LinkedList {
 		ll.add(5);
 		ll.add(10);
 		ll.add(15);
-		//ll.add(1,0);
-		//ll.add(2,10);
+		ll.add(1,0);
+		ll.add(2,10);
 		ll.display();
 		System.out.println("LinkedList Size="+ll.getSize());
 		System.out.println(ll.deleteElement(5));
