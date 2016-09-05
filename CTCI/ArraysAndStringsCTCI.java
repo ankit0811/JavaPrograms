@@ -52,6 +52,9 @@ class checkUnique{
 	}
 }
 
+/*----------------------------------------------------------------*/
+
+
 /*Algorithm to check wtr two strings are permutation of each other*/
 class checkPermutation{
 	checkPermutation(){
@@ -110,17 +113,72 @@ class checkPermutation{
 	}
 }
 
+/*----------------------------------------------------------------*/
+
+/*URLify Replace space with %20 given enough space at the end of the string
+ * I/p: "Mr John Smith    ",13
+ * O/p: "Mr%20John%20Smith"
+ * */
+
+class URLify{
+	URLify(){
+		
+	}
+	
+	void getURLify(String str){
+		char strArr[]=str.toCharArray();
+		System.out.println(Arrays.toString(strArr));
+		System.out.println("i="+strArr.length);
+		
+		int i=strArr.length-1;
+		while(strArr[i] == ' '){
+			i--;
+		}
+		System.out.println(i);
+		
+		for (int j=strArr.length-1;i>0;i--){
+			System.out.println(Arrays.toString(strArr));
+			System.out.println("strArr[i]="+strArr[i]);
+			
+			System.out.println(i);
+			if (strArr[i]==' '){
+				strArr[j--]='0';
+				strArr[j--]='2';
+				strArr[j--]='%';
+			}
+			else{
+				strArr[j--]=strArr[i];
+			}
+			
+		}
+		System.out.println(String.copyValueOf(strArr));
+		
+	}
+	
+}
+
+
+/*----------------------------------------------------------------*/
+
+
+
 public class ArraysAndStringsCTCI {
 	public static void main (String Args[]){
 		
 		checkUnique cU=new checkUnique();
-		System.out.println(cU.isUniqueHashTable("ABA"));
-		System.out.println(cU.isUniqueHashMap("ABC"));
+	//	System.out.println(cU.isUniqueHashTable("ABA"));
+	//	System.out.println(cU.isUniqueHashMap("ABC"));
 		
 		checkPermutation cP=new checkPermutation();
-		System.out.println(cP.isPermutationHashMap("DOG", "GOD"));
-		System.out.println(cP.isPermutationHashMap("DOG", "GOd"));
+	//	System.out.println(cP.isPermutationHashMap("DOG", "GOD"));
+	//	System.out.println(cP.isPermutationHashMap("DOG", "GOd"));
 		
-		System.out.println(cP.isPermutationString("DOG", "GOf"));
+	//	System.out.println(cP.isPermutationString("DOG", "GOf"));
+		
+		URLify uf=new URLify();
+		uf.getURLify("Mr John Smith    ");
+		             
 	}
 }
+
+
